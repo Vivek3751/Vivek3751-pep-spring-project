@@ -13,7 +13,7 @@ import com.example.repository.AccountRepository;
 public class AccountService {
     AccountRepository accountRepository;
     Account account;
-
+    AccountService accountService;
     public AccountService(AccountRepository accountRepository){
         this.accountRepository = accountRepository;
     }
@@ -25,6 +25,8 @@ As a user, I should be able to create a new Account on the endpoint POST localho
 - If the registration is not successful due to a duplicate username, the response status should be 409. (Conflict)
 - If the registration is not successful for some other reason, the response status should be 400. (Client error) */
     
+
+
     public Account getAccountByUsername(String username) {
         return accountRepository.getAccountByUsername(username);
     }

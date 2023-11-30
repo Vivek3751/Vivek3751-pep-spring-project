@@ -38,9 +38,11 @@ public class SocialMediaController {
     private MessageService messageService;
     MessageRepository messageRepository;
     AccountRepository accountRepository;
-    public SocialMediaController(MessageService messageService){
+    public SocialMediaController(AccountService accountService,MessageService messageService){
         this.messageService = messageService;
+        this.accountService = accountService;
     }
+    
     /*1: Our API should be able to process new User registrations. */
     @PostMapping("/register")
     public ResponseEntity<Object> newUserAccountRegister(@RequestBody Account account) {
